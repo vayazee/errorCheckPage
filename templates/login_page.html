@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<style>
+    .mytitle{
+        font-weight: bold;
+        color: white;
+    }
+
+</style>
+
+<head></head>
+
+{% block body %}
+{% if not session['logged_in'] %}
+<form action="/uv_error" method="POST">
+<h1 align="center" class="mytitle" >USERVOICE</h1>
+    <h3 align="center" class="mytitle">Infratech</h3>
+    <br>
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Login</h1>
+			</div>
+
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="ID" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="Password" name="password">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+                <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block" >
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+
+{% endif %}
+{% endblock %}
