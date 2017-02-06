@@ -5,6 +5,7 @@ import os
 from hashlib import md5
 
 app = Flask(__name__)
+app.secret_key = os.urandom(12)
 
 @app.route('/')
 def Uservoice_index_page():
@@ -43,7 +44,7 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.secret_key = os.urandom(12)
+
     app.run(host='0.0.0.0', port=5005, threaded=True, debug=True)
     #app.run()
 
