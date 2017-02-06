@@ -46,6 +46,5 @@ def logout():
 if __name__ == '__main__':
 
     app.run(host='0.0.0.0', port=5005, threaded=True, debug=True)
-    #app.run()
 
 ### http 는 Network/ Form Data 에 request가 남는다..
